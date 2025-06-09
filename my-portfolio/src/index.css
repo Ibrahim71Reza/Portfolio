@@ -1,0 +1,31 @@
+/* File: src/index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* src/index.css */
+@layer base {
+  body {
+    /* The particle canvas provides the background now */
+    @apply text-slate;
+  }
+}
+
+/* Add this at the end of the file */
+
+@keyframes breathing-glow {
+  0%, 100% {
+    text-shadow: 0 0 5px rgba(100, 255, 218, 0.2), 0 0 10px rgba(100, 255, 218, 0.2);
+    transform: scale(1);
+  }
+  50% {
+    text-shadow: 0 0 20px rgba(100, 255, 218, 0.5), 0 0 30px rgba(100, 255, 218, 0.5);
+    transform: scale(1.02);
+  }
+}
+
+@layer utilities {
+  .animate-breathing-glow {
+    animation: breathing-glow 4s ease-in-out infinite;
+  }
+}
